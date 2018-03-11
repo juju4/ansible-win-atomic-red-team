@@ -87,9 +87,15 @@ test_script:
 after_test:
 - cmd: |
     %CYG_BASH% -lc 'ansible-playbook -i /cygdrive/c/projects/ansible-win-atomic-red-team/test/appveyor/inventory /cygdrive/c/projects/ansible-win-atomic-red-team/test/integration/default/default.yml $ANSIBLE_EXTRA_VARS'
-- ps: Get-EventLog -LogName System -EntryType Error
-- ps: Get-EventLog -LogName Security -EntryType Error
-- ps: Get-EventLog -LogName Application -EntryType Error
+- ps: |
+    Get-EventLog -LogName System -EntryType Error
+    True
+- ps: |
+    Get-EventLog -LogName Security -EntryType Error
+    True
+- ps: |
+    Get-EventLog -LogName Application -EntryType Error
+    True
 
 notifications:
 - provider: Email
