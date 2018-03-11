@@ -1,8 +1,8 @@
 [![Build Status - Master](https://travis-ci.org/juju4/ansible-win-atomic-red-team.svg?branch=master)](https://travis-ci.org/juju4/ansible-win-atomic-red-team)
 [![Build Status - Devel](https://travis-ci.org/juju4/ansible-win-atomic-red-team.svg?branch=devel)](https://travis-ci.org/juju4/ansible-win-atomic-red-team/branches)(Syntax Only)
 
-[![Appveyor - Master](https://ci.appveyor.com/api/projects/status/ie1enn168innvjon?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-atomic-red-team)
-![Appveyor - Devel](https://ci.appveyor.com/api/projects/status/ie1enn168innvjon/branch/devel?svg=true)
+[![Appveyor - Master](https://ci.appveyor.com/api/projects/status/kj37mo8x560w55at?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-atomic-red-team)
+![Appveyor - Devel](https://ci.appveyor.com/api/projects/status/kj37mo8x560w55at/branch/devel?svg=true)
 
 # Windows Atomic Red Team security check ansible role
 
