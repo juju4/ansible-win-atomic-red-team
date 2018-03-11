@@ -1,0 +1,4 @@
+---
+
+- include: testing-atomic-red-team.yml
+  when: win_testing_atomicredteam and ansible_os_family == "Windows"
