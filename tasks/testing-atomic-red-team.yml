@@ -4,15 +4,21 @@
 # https://github.com/redcanaryco/atomic-red-team
 # https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/ARTifacts/Chain_Reactions/chain_reaction_DragonsTail.bat
 
+- name: Ensure dependencies are present
+  win_chocolatey:
+    name: "{{ item }}"
+  with_items:
+    - git
+
 - name: Testing Detections | Download Redcanary Atomic-red-team
-  win_command: "git.exe clone https://github.com/redcanaryco/atomic-red-team.git \"{{ harden_win_temp_dir }}\\atomic-red-team\""
+  win_command: "git.exe clone https://github.com/redcanaryco/atomic-red-team.git \"{{ win_temp_dir }}\\atomic-red-team\""
   args:
-    creates: "{{ harden_win_temp_dir }}\\atomic-red-team"
+    creates: "{{ win_temp_dir }}\\atomic-red-team"
 #  git:
 #    repo: https://github.com/redcanaryco/atomic-red-team.git
-#    dest: "{{ harden_win_temp_dir }}/atomic-red-team"
+#    dest: "{{ win_temp_dir }}/atomic-red-team"
 
 - name: Testing Detections | Executing Redcanary Atomic-red-team chain_reaction_DragonsTail.bat
   win_command: cmd.exe /c chain_reaction_DragonsTail.bat
   args:
-    chdir: "{{ harden_win_temp_dir }}/atomic-red-team/ARTifacts/Chain_Reactions"
+    chdir: "{{ win_temp_dir }}/atomic-red-team/ARTifacts/Chain_Reactions"

@@ -1,4 +1,14 @@
 ---
 
+- name: Create ansible directories
+  win_file:
+    path: "{{ item }}"
+    state: directory
+#  raw: "mkdir {{ item }}"
+  with_items:
+    - "{{ win_temp_dir }}"
+    - "{{ win_log_dir }}"
+  ignore_errors: true
+
 - include: testing-atomic-red-team.yml
   when: win_testing_atomicredteam and ansible_os_family == "Windows"
