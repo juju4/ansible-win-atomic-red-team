@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: win_atomic_red_team
   author: juju4
   description: Run Atomic Red Team as security test on Windows system
   license: BSD
