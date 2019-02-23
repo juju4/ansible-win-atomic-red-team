@@ -22,3 +22,8 @@
   win_command: cmd.exe /c chain_reaction_DragonsTail.bat
   args:
     chdir: "{{ win_temp_dir }}/atomic-red-team/ARTifacts/Chain_Reactions"
+  register: atomic
+- name: Testing Detections | save Atomic-red-team results to file
+  win_copy:
+    content: "{{ atomic.stdout }}"
+    dest: "{{ win_log_dir }}\\atomic-red-team-log.txt"
