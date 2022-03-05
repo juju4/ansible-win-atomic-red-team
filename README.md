@@ -1,5 +1,5 @@
-[![Appveyor - master](https://ci.appveyor.com/api/projects/status/kj37mo8x560w55at/branch/master?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-osquery/branch/master)
-[![Appveyor - devel](https://ci.appveyor.com/api/projects/status/kj37mo8x560w55at/branch/devel?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-osquery/branch/devel)
+[![Appveyor - master](https://ci.appveyor.com/api/projects/status/kj37mo8x560w55at/branch/master?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-atomic-red-team/branch/master)
+[![Appveyor - devel](https://ci.appveyor.com/api/projects/status/kj37mo8x560w55at/branch/devel?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-atomic-red-team/branch/devel)
 
 # Windows Atomic Red Team security check ansible role
 
