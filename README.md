@@ -1,5 +1,5 @@
-[![Appveyor - Master](https://ci.appveyor.com/api/projects/status/kj37mo8x560w55at?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-atomic-red-team)
-![Appveyor - Devel](https://ci.appveyor.com/api/projects/status/kj37mo8x560w55at/branch/devel?svg=true)
+[![Appveyor - master](https://ci.appveyor.com/api/projects/status/kj37mo8x560w55at/branch/master?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-osquery/branch/master)
+[![Appveyor - devel](https://ci.appveyor.com/api/projects/status/kj37mo8x560w55at/branch/devel?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-osquery/branch/devel)
 
 # Windows Atomic Red Team security check ansible role
 
@@ -13,7 +13,9 @@ https://github.com/redcanaryco/atomic-red-team/
 It was tested on the following versions:
  * 2.3
  * 2.4
- * 2.5b2
+ * 2.5
+ * 4.10.0
+ * 5.3.0
 
 ### Operating systems
 
@@ -27,7 +29,7 @@ For example
 ```
 - host: all
   roles:
-    - juju4.win-atomic-red-team
+    - juju4.win_atomic_red_team
 ```
 
 Run
@@ -45,7 +47,7 @@ See defaults/main.yml for full scope
 This role has a travis basic test (for github, syntax check only), Appveyor test and a Vagrantfile (test/vagrant).
 
 ```
-$ cd /path/to/roles/juju4.win-atomic-red-team/test/vagrant
+$ cd /path/to/roles/juju4.win_atomic_red_team/test/vagrant
 $ vagrant up
 $ vagrant provision
 $ vagrant destroy
@@ -59,4 +61,3 @@ $ ansible -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory -
 ## License
 
 BSD 2-clause
-
