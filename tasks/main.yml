@@ -4,11 +4,11 @@
   win_file:
     path: "{{ item }}"
     state: directory
-#  raw: "mkdir {{ item }}"
+  # raw: "mkdir {{ item }}"
   with_items:
     - "{{ win_temp_dir }}"
     - "{{ win_log_dir }}"
-  ignore_errors: true
+  failed_when: false
 
 - include: testing-atomic-red-team.yml
   when: win_testing_atomicredteam and ansible_os_family == "Windows"
