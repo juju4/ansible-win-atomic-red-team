@@ -5,13 +5,13 @@
 # https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/ARTifacts/Chain_Reactions/chain_reaction_DragonsTail.bat
 
 - name: Ensure dependencies are present
-  win_chocolatey:
+  chocolatey.chocolatey.win_chocolatey:
     name: "{{ item }}"
   with_items:
     - git
 
 - name: Testing Detections | Download Redcanary Atomic-red-team
-  win_command: "git.exe clone https://github.com/redcanaryco/atomic-red-team.git \"{{ win_temp_dir }}\\atomic-red-team\""
+  ansible.windows.win_command: "git.exe clone https://github.com/redcanaryco/atomic-red-team.git \"{{ win_temp_dir }}\\atomic-red-team\""
   args:
     creates: "{{ win_temp_dir }}\\atomic-red-team"
 #  git:
@@ -19,11 +19,11 @@
 #    dest: "{{ win_temp_dir }}/atomic-red-team"
 
 - name: Testing Detections | Executing Redcanary Atomic-red-team chain_reaction_DragonsTail.bat
-  win_command: cmd.exe /c chain_reaction_DragonsTail.bat
+  ansible.windows.win_command: cmd.exe /c chain_reaction_DragonsTail.bat
   args:
     chdir: "{{ win_temp_dir }}/atomic-red-team/ARTifacts/Chain_Reactions"
   register: atomic
 - name: Testing Detections | save Atomic-red-team results to file
-  win_copy:
+  ansible.windows.win_copy:
     content: "{{ atomic.stdout }}"
     dest: "{{ win_log_dir }}\\atomic-red-team-log.txt"

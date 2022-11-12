@@ -1,7 +1,7 @@
 ---
 
 - name: Create ansible directories
-  win_file:
+  ansible.windows.win_file:
     path: "{{ item }}"
     state: directory
   # raw: "mkdir {{ item }}"
@@ -10,5 +10,6 @@
     - "{{ win_log_dir }}"
   failed_when: false
 
-- include: testing-atomic-red-team.yml
+- name: Import testing-atomic-red-team
+  ansible.builtin.import_tasks: testing-atomic-red-team.yml
   when: win_testing_atomicredteam and ansible_os_family == "Windows"
